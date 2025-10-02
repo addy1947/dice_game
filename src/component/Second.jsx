@@ -6,14 +6,29 @@ const Second = () => {
     const [warning, setWarning] = useState("")
     const [diceImage, setDiceImage] = useState('/image/dice1.png')
     const [showRule, setShowRule] = useState('')
+    const [isRolling, setIsRolling] = useState(false)
+    const [animateDice, setAnimateDice] = useState(false)
+    const [shakeDice, setShakeDice] = useState(false)
 
     const game = async () => {
         setWarning("")
 
-        if (dice === 0) {
-            setWarning("Please select a number")
+        // Prevent rolling if already rolling
+        if (isRolling) {
             return
         }
+
+        if (dice === 0) {
+            setWarning("Please select a number")
+            // Add shake animation for warning
+            setShakeDice(true)
+            setTimeout(() => setShakeDice(false), 300)
+            return
+        }
+
+        // Start rolling animation
+        setIsRolling(true)
+        setAnimateDice(true)
 
         let previousRand = 0
         let i = 0
@@ -25,12 +40,18 @@ const Second = () => {
                 setDiceImage(`/image/dice${rand}.png`)
                 previousRand = rand
                 i++
-                await new Promise((res) => setTimeout(res, 300))
+                await new Promise((res) => setTimeout(res, 200))
             }
         }
 
         const finalRand = Math.floor(Math.random() * 6) + 1
         setDiceImage(`/image/dice${finalRand}.png`)
+
+        // Stop rolling animation after a brief delay
+        setTimeout(() => {
+            setIsRolling(false)
+            setAnimateDice(false)
+        }, 500)
 
         if (finalRand === dice) {
             setTotal(total + dice * 4)
@@ -81,7 +102,17 @@ const Second = () => {
                                 src={diceImage}
                                 alt="Play"
                                 onClick={game}
-                                className='w-48 md:w-72 cursor-pointer'
+                                className={`w-48 md:w-72 cursor-pointer dice-image ${
+                                    isRolling ? 'dice-rolling' : ''
+                                } ${
+                                    animateDice ? 'dice-bounce' : ''
+                                } ${
+                                    shakeDice ? 'dice-shake' : ''
+                                }`}
+                                style={{
+                                    transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    transform: isRolling ? 'scale(1.1)' : 'scale(1)',
+                                }}
                             />
                         </div>
 
