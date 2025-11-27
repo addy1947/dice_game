@@ -80,12 +80,12 @@ const Second = () => {
 
                     <div className='text-center'>
                         <div className='flex flex-wrap justify-center gap-2'>
-                            <button onClick={() => setDice(1)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 1 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>1</button>
-                            <button onClick={() => setDice(2)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 2 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>2</button>
-                            <button onClick={() => setDice(3)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 3 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>3</button>
-                            <button onClick={() => setDice(4)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 4 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>4</button>
-                            <button onClick={() => setDice(5)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 5 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>5</button>
-                            <button onClick={() => setDice(6)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold ${dice === 6 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>6</button>
+                            <button onClick={() => setDice(1)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 1 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>1</button>
+                            <button onClick={() => setDice(2)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 2 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>2</button>
+                            <button onClick={() => setDice(3)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 3 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>3</button>
+                            <button onClick={() => setDice(4)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 4 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>4</button>
+                            <button onClick={() => setDice(5)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 5 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>5</button>
+                            <button onClick={() => setDice(6)} className={`border-2 border-black dark:border-white py-2 px-4 font-semibold transition-all duration-200 hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700 ${dice === 6 ? 'bg-black text-white dark:bg-white dark:text-black' : ''}`}>6</button>
                         </div>
 
                         <div className='text-base md:text-xl font-semibold mt-2'>
@@ -121,13 +121,13 @@ const Second = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => setTotal(0)} className='border-2 border-black dark:border-white rounded bg-white text-black px-6 py-1 mt-4 hover:bg-gray-100 dark:hover:bg-gray-200 transition-colors'>
+                        <button onClick={() => setTotal(0)} className='border-2 border-black dark:border-white rounded bg-white text-black px-6 py-1 mt-4 hover:bg-gray-100 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md'>
                             Reset Score
                         </button>
                     </div>
 
                     <div>
-                        <button onClick={rule} className='border-2 border-black dark:border-white rounded bg-black text-white dark:bg-white dark:text-black px-6 py-1 mt-4 mb-4 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors'>
+                        <button onClick={rule} className='border-2 border-black dark:border-white rounded bg-black text-white dark:bg-white dark:text-black px-6 py-1 mt-4 mb-4 hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md'>
                             Show Rule
                         </button>
                     </div>
